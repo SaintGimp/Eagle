@@ -566,8 +566,8 @@ grid 5 mm, diameter 14 mm</description>
 <wire x1="-9.525" y1="1.905" x2="-9.525" y2="0.762" width="0.1524" layer="21"/>
 <wire x1="-16.51" y1="-2.54" x2="-16.002" y2="-2.54" width="0.762" layer="51"/>
 <wire x1="-16.51" y1="2.54" x2="-16.002" y2="2.54" width="0.762" layer="51"/>
-<pad name="+" x="-17.78" y="2.54" drill="0.9"/>
-<pad name="-" x="-17.78" y="-2.54" drill="0.9" shape="octagon"/>
+<pad name="+" x="-17.78" y="2.54" drill="1"/>
+<pad name="-" x="-17.78" y="-2.54" drill="1" shape="octagon"/>
 <text x="-4.699" y="1.651" size="0.8128" layer="25" ratio="10">&gt;NAME</text>
 <text x="-4.8006" y="-3.1242" size="0.8128" layer="27" ratio="10">&gt;VALUE</text>
 <rectangle x1="-9.779" y1="-2.032" x2="-9.271" y2="1.016" layer="21" rot="R270"/>
@@ -3402,6 +3402,24 @@ Supply Protection Controller</description>
 <connect gate="G$1" pin="UV" pad="2"/>
 <connect gate="G$1" pin="VIN" pad="1"/>
 <connect gate="G$1" pin="VOUT" pad="7"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="IRLML2060TRPBF" prefix="Q">
+<description>N-MOSFET 60V 1.2A 480mOhm</description>
+<gates>
+<gate name="G$1" symbol="N-MOSFET" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOT-23-3">
+<connects>
+<connect gate="G$1" pin="DRN" pad="3"/>
+<connect gate="G$1" pin="GATE" pad="1"/>
+<connect gate="G$1" pin="SRC" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
