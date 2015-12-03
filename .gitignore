@@ -4,5 +4,5 @@
 *.job
 *.scr
 *.pro
-
+\~\$*
 Thumbs.db
