@@ -76,8 +76,13 @@
 <layer number="111" name="LPC17xx" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="112" name="tSilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="113" name="IDFDebug" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="114" name="FRNTMAAT1" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="115" name="FRNTMAAT2" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
+<layer number="117" name="BACKMAAT1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="no" active="no"/>
+<layer number="119" name="KAP_TEKEN" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="120" name="KAP_MAAT1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="123" name="tTestmark" color="7" fill="1" visible="no" active="yes"/>
@@ -87,6 +92,7 @@
 <layer number="127" name="_tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="128" name="_bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="129" name="Mask" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="130" name="SMDSTROOK" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="131" name="tAdjust" color="7" fill="1" visible="no" active="yes"/>
 <layer number="132" name="bAdjust" color="7" fill="1" visible="no" active="yes"/>
 <layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
@@ -172,7 +178,11 @@
 <pad name="5" x="-1.27" y="-2.54" drill="1"/>
 <pad name="6" x="1.27" y="-2.54" drill="1"/>
 <text x="-2.794" y="-3.048" size="0.8128" layer="25" rot="R90">&gt;NAME</text>
-<text x="-3.048" y="3.556" size="1.016" layer="21" font="vector">1</text>
+<polygon width="0.127" layer="21">
+<vertex x="-2.54" y="3.048"/>
+<vertex x="-2.54" y="3.81"/>
+<vertex x="-1.778" y="3.81"/>
+</polygon>
 </package>
 <package name="CAPACITOR-5MM">
 <pad name="1" x="-2.54" y="0" drill="0.8"/>
@@ -480,6 +490,22 @@
 <pad name="7" x="7.62" y="0" drill="1" shape="long" rot="R90"/>
 <rectangle x1="7.366" y1="-0.254" x2="7.874" y2="0.254" layer="51"/>
 </package>
+<package name="LED-0805">
+<wire x1="-1.973" y1="0.983" x2="1.973" y2="0.983" width="0.0508" layer="39"/>
+<wire x1="1.973" y1="0.983" x2="1.973" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="1.973" y1="-0.983" x2="-1.973" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="-1.973" y1="-0.983" x2="-1.973" y2="0.983" width="0.0508" layer="39"/>
+<smd name="1" x="-1" y="0" dx="1.1" dy="1.4" layer="1"/>
+<smd name="2" x="1" y="0" dx="1.1" dy="1.4" layer="1"/>
+<text x="-0.762" y="1.0795" size="0.8128" layer="25">&gt;NAME</text>
+<rectangle x1="0.4064" y1="-0.6985" x2="1.0564" y2="0.6985" layer="51"/>
+<rectangle x1="-1.0668" y1="-0.6985" x2="-0.4168" y2="0.6985" layer="51"/>
+<polygon width="0.127" layer="21">
+<vertex x="-0.1524" y="0.508"/>
+<vertex x="0.1524" y="0"/>
+<vertex x="-0.1524" y="-0.508"/>
+</polygon>
+</package>
 </packages>
 <symbols>
 <symbol name="AVRISP">
@@ -522,8 +548,7 @@
 <wire x1="-1.905" y1="0.635" x2="-3.302" y2="-0.762" width="0.1524" layer="94"/>
 <pin name="A" x="0" y="5.08" visible="off" length="short" direction="pas" rot="R270"/>
 <pin name="C" x="0" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
-<text x="3.556" y="-2.032" size="1.778" layer="95" rot="R90">&gt;NAME</text>
-<text x="5.715" y="-2.032" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<text x="3.81" y="-1.016" size="1.778" layer="95" rot="R90">&gt;NAME</text>
 <polygon width="0.1524" layer="94">
 <vertex x="-3.429" y="0.381"/>
 <vertex x="-3.048" y="1.27"/>
@@ -657,15 +682,24 @@ Standard 6 pin header for ICSP programming</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="LED" prefix="D">
+<deviceset name="LED-*" prefix="D">
 <gates>
 <gate name="1" symbol="LED" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="LED5MM">
+<device name="5MM" package="LED5MM">
 <connects>
 <connect gate="1" pin="A" pad="A"/>
 <connect gate="1" pin="C" pad="K"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="0805" package="LED-0805">
+<connects>
+<connect gate="1" pin="A" pad="1"/>
+<connect gate="1" pin="C" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -813,7 +847,7 @@ Standard 6 pin header for ICSP programming</description>
 <part name="ISP1" library="SaintGimp" deviceset="ICSP-HEADER" device="-6"/>
 <part name="C1" library="SaintGimp" deviceset="CAPACITOR-*" device="0805" value="1uF"/>
 <part name="GND2" library="SaintGimp" deviceset="GND" device=""/>
-<part name="D1" library="SaintGimp" deviceset="LED" device=""/>
+<part name="D1" library="SaintGimp" deviceset="LED-*" device="0805"/>
 <part name="GND3" library="SaintGimp" deviceset="GND" device=""/>
 <part name="P+1" library="SaintGimp" deviceset="VCC" device=""/>
 <part name="P+2" library="SaintGimp" deviceset="VCC" device=""/>
@@ -824,6 +858,9 @@ Standard 6 pin header for ICSP programming</description>
 <part name="U1" library="SaintGimp" deviceset="ATTINY84-20PU" device=""/>
 <part name="J1" library="SaintGimp" deviceset="PINHD-1X7" device=""/>
 <part name="J2" library="SaintGimp" deviceset="PINHD-1X7" device=""/>
+<part name="R3" library="SaintGimp" deviceset="RESISTOR-*" device="0805" value="330R"/>
+<part name="D2" library="SaintGimp" deviceset="LED-*" device="0805"/>
+<part name="GND4" library="SaintGimp" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -856,6 +893,9 @@ Standard 6 pin header for ICSP programming</description>
 <instance part="J2" gate="5" x="93.98" y="50.8" rot="R180"/>
 <instance part="J2" gate="6" x="93.98" y="53.34" rot="R180"/>
 <instance part="J2" gate="7" x="43.18" y="35.56"/>
+<instance part="R3" gate="G$1" x="22.86" y="68.58"/>
+<instance part="D2" gate="1" x="33.02" y="68.58" rot="R90"/>
+<instance part="GND4" gate="1" x="38.1" y="68.58" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -878,6 +918,10 @@ Standard 6 pin header for ICSP programming</description>
 <pinref part="U1" gate="A" pin="GND"/>
 <pinref part="J2" gate="7" pin="KL"/>
 <wire x1="48.26" y1="35.56" x2="50.8" y2="35.56" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="D2" gate="1" pin="C"/>
+<pinref part="GND4" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="MISO" class="0">
@@ -913,7 +957,7 @@ Standard 6 pin header for ICSP programming</description>
 <pinref part="U1" gate="A" pin="PB3"/>
 <pinref part="J1" gate="4" pin="KL"/>
 <wire x1="48.26" y1="43.18" x2="50.8" y2="43.18" width="0.1524" layer="91"/>
-<label x="45.72" y="43.18" size="1.4224" layer="95"/>
+<label x="45.72" y="43.18" size="1.27" layer="95"/>
 </segment>
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
@@ -976,11 +1020,17 @@ Standard 6 pin header for ICSP programming</description>
 <wire x1="48.26" y1="45.72" x2="50.8" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$5" class="0">
+<net name="LED" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="PB2"/>
 <pinref part="J1" gate="5" pin="KL"/>
 <wire x1="48.26" y1="40.64" x2="50.8" y2="40.64" width="0.1524" layer="91"/>
+<label x="45.72" y="40.64" size="1.27" layer="95"/>
+</segment>
+<segment>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="17.78" y1="68.58" x2="15.24" y2="68.58" width="0.1524" layer="91"/>
+<label x="15.24" y="68.58" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -1016,6 +1066,12 @@ Standard 6 pin header for ICSP programming</description>
 <pinref part="U1" gate="A" pin="PA0"/>
 <pinref part="J2" gate="6" pin="KL"/>
 <wire x1="88.9" y1="53.34" x2="86.36" y2="53.34" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="D2" gate="1" pin="A"/>
+<pinref part="R3" gate="G$1" pin="2"/>
 </segment>
 </net>
 </nets>

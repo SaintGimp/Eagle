@@ -76,8 +76,13 @@
 <layer number="111" name="LPC17xx" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="112" name="tSilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="113" name="IDFDebug" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="114" name="FRNTMAAT1" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="115" name="FRNTMAAT2" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
+<layer number="117" name="BACKMAAT1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="no" active="no"/>
+<layer number="119" name="KAP_TEKEN" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="120" name="KAP_MAAT1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="123" name="tTestmark" color="7" fill="1" visible="no" active="yes"/>
@@ -87,6 +92,7 @@
 <layer number="127" name="_tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="128" name="_bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="129" name="Mask" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="130" name="SMDSTROOK" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="131" name="tAdjust" color="7" fill="1" visible="no" active="yes"/>
 <layer number="132" name="bAdjust" color="7" fill="1" visible="no" active="yes"/>
 <layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
@@ -149,6 +155,9 @@
 <text x="8.255" y="1.27" size="1.016" layer="122" rot="MR90">SaintGimp</text>
 <text x="5.715" y="1.27" size="1.016" layer="122" rot="MR90">v1.1</text>
 <text x="6.985" y="1.27" size="1.016" layer="122" rot="MR90">ATTiny84</text>
+<circle x="5.842" y="19.304" radius="0.359209375" width="0.6096" layer="121"/>
+<text x="7.62" y="24.13" size="0.8128" layer="121" rot="R90">PWR</text>
+<text x="14.605" y="24.13" size="0.8128" layer="121" rot="R90">PIN5</text>
 </plain>
 <libraries>
 <library name="SaintGimp">
@@ -183,7 +192,11 @@
 <pad name="5" x="-1.27" y="-2.54" drill="1"/>
 <pad name="6" x="1.27" y="-2.54" drill="1"/>
 <text x="-2.794" y="-3.048" size="0.8128" layer="25" rot="R90">&gt;NAME</text>
-<text x="-3.048" y="3.556" size="1.016" layer="21" font="vector">1</text>
+<polygon width="0.127" layer="21">
+<vertex x="-2.54" y="3.048"/>
+<vertex x="-2.54" y="3.81"/>
+<vertex x="-1.778" y="3.81"/>
+</polygon>
 </package>
 <package name="CAPACITOR-0805">
 <wire x1="-0.41" y1="0.635" x2="0.41" y2="0.635" width="0.1524" layer="51"/>
@@ -199,22 +212,21 @@
 <rectangle x1="0.4064" y1="-0.6985" x2="1.0564" y2="0.6985" layer="51"/>
 <rectangle x1="-1.0668" y1="-0.6985" x2="-0.4168" y2="0.6985" layer="51"/>
 </package>
-<package name="LED5MM">
-<description>&lt;B&gt;LED&lt;/B&gt;&lt;p&gt;
-5 mm, round</description>
-<wire x1="2.54" y1="-1.905" x2="2.54" y2="1.905" width="0.2032" layer="21"/>
-<wire x1="2.54" y1="-1.905" x2="2.54" y2="1.905" width="0.254" layer="21" curve="-286.260205" cap="flat"/>
-<wire x1="-1.143" y1="0" x2="0" y2="1.143" width="0.1524" layer="51" curve="-90" cap="flat"/>
-<wire x1="0" y1="-1.143" x2="1.143" y2="0" width="0.1524" layer="51" curve="90" cap="flat"/>
-<wire x1="-1.651" y1="0" x2="0" y2="1.651" width="0.1524" layer="51" curve="-90" cap="flat"/>
-<wire x1="0" y1="-1.651" x2="1.651" y2="0" width="0.1524" layer="51" curve="90" cap="flat"/>
-<wire x1="-2.159" y1="0" x2="0" y2="2.159" width="0.1524" layer="51" curve="-90" cap="flat"/>
-<wire x1="0" y1="-2.159" x2="2.159" y2="0" width="0.1524" layer="51" curve="90" cap="flat"/>
-<circle x="0" y="0" radius="2.54" width="0.1524" layer="21"/>
-<pad name="A" x="-1.27" y="0" drill="0.8"/>
-<pad name="K" x="1.27" y="0" drill="0.8" shape="octagon"/>
-<text x="3.175" y="0.5334" size="0.8128" layer="25" ratio="10">&gt;NAME</text>
-<text x="3.2004" y="-1.8034" size="0.8128" layer="27" ratio="10">&gt;VALUE</text>
+<package name="LED-0805">
+<wire x1="-1.973" y1="0.983" x2="1.973" y2="0.983" width="0.0508" layer="39"/>
+<wire x1="1.973" y1="0.983" x2="1.973" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="1.973" y1="-0.983" x2="-1.973" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="-1.973" y1="-0.983" x2="-1.973" y2="0.983" width="0.0508" layer="39"/>
+<smd name="1" x="-1" y="0" dx="1.1" dy="1.4" layer="1"/>
+<smd name="2" x="1" y="0" dx="1.1" dy="1.4" layer="1"/>
+<text x="-0.762" y="1.0795" size="0.8128" layer="25">&gt;NAME</text>
+<rectangle x1="0.4064" y1="-0.6985" x2="1.0564" y2="0.6985" layer="51"/>
+<rectangle x1="-1.0668" y1="-0.6985" x2="-0.4168" y2="0.6985" layer="51"/>
+<polygon width="0.127" layer="21">
+<vertex x="-0.1524" y="0.508"/>
+<vertex x="0.1524" y="0"/>
+<vertex x="-0.1524" y="-0.508"/>
+</polygon>
 </package>
 <package name="RESISTOR-0805">
 <wire x1="-0.41" y1="0.635" x2="0.41" y2="0.635" width="0.1524" layer="51"/>
@@ -407,7 +419,7 @@
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules name="Saintgimp-OSHPark">
+<designrules name="Saintgimp-OSHPark *">
 <description language="de">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
 &lt;p&gt;
 Die Standard-Design-Rules sind so gewählt, dass sie für 
@@ -439,9 +451,9 @@ Please make sure your boards conform to these design rules.</description>
 <param name="msDrill" value="13mil"/>
 <param name="msMicroVia" value="13mil"/>
 <param name="msBlindViaRatio" value="0.5"/>
-<param name="rvPadTop" value="0.4"/>
+<param name="rvPadTop" value="0.35"/>
 <param name="rvPadInner" value="0.25"/>
-<param name="rvPadBottom" value="0.4"/>
+<param name="rvPadBottom" value="0.35"/>
 <param name="rvViaOuter" value="0.25"/>
 <param name="rvViaInner" value="0.25"/>
 <param name="rvMicroViaOuter" value="0.25"/>
@@ -587,11 +599,9 @@ Please make sure your boards conform to these design rules.</description>
 <element name="C1" library="SaintGimp" package="CAPACITOR-0805" value="1uF" x="6.985" y="16.51" smashed="yes" rot="MR0">
 <attribute name="NAME" x="10.287" y="16.3195" size="0.8128" layer="26" rot="MR0"/>
 </element>
-<element name="D1" library="SaintGimp" package="LED5MM" value="LED" x="11.43" y="24.13" smashed="yes" rot="R90">
-<attribute name="NAME" x="13.4366" y="20.32" size="0.8128" layer="25" ratio="10"/>
-</element>
-<element name="R1" library="SaintGimp" package="RESISTOR-0805" value="330R" x="8.89" y="19.05" smashed="yes" rot="MR180">
-<attribute name="NAME" x="10.668" y="19.2405" size="0.8128" layer="26" rot="MR180"/>
+<element name="D1" library="SaintGimp" package="LED-0805" value="LED-0805" x="8.89" y="25.4" smashed="yes" rot="R90"/>
+<element name="R1" library="SaintGimp" package="RESISTOR-0805" value="330R" x="8.89" y="20.955" smashed="yes" rot="R90">
+<attribute name="NAME" x="7.8105" y="20.193" size="0.8128" layer="25" rot="R90"/>
 </element>
 <element name="R2" library="SaintGimp" package="RESISTOR-0805" value="10K" x="6.35" y="12.7" smashed="yes" rot="MR90">
 <attribute name="NAME" x="7.112" y="9.9695" size="0.8128" layer="26" rot="MR0"/>
@@ -605,6 +615,10 @@ Please make sure your boards conform to these design rules.</description>
 </element>
 <element name="J1" library="SaintGimp" package="1X07" value="PINHD-1X7" x="1.27" y="8.89" smashed="yes" rot="MR270"/>
 <element name="J2" library="SaintGimp" package="1X07" value="PINHD-1X7" x="13.97" y="8.89" smashed="yes" rot="MR90"/>
+<element name="R3" library="SaintGimp" package="RESISTOR-0805" value="330R" x="12.7" y="20.955" smashed="yes" rot="R90">
+<attribute name="NAME" x="11.6205" y="20.193" size="0.8128" layer="25" rot="R90"/>
+</element>
+<element name="D2" library="SaintGimp" package="LED-0805" value="LED-0805" x="12.7" y="25.4" smashed="yes" rot="R90"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -616,31 +630,34 @@ Please make sure your boards conform to these design rules.</description>
 </polygon>
 <contactref element="ISP1" pad="6"/>
 <contactref element="C1" pad="1"/>
-<contactref element="D1" pad="K"/>
+<contactref element="D1" pad="2"/>
 <contactref element="U1" pad="14"/>
 <contactref element="J2" pad="7"/>
+<via x="10.795" y="26.67" extent="1-16" drill="0.5"/>
+<wire x1="8.89" y1="26.4" x2="9.16" y2="26.67" width="0.254" layer="1"/>
+<wire x1="9.16" y1="26.67" x2="10.795" y2="26.67" width="0.254" layer="1"/>
+<contactref element="D2" pad="2"/>
+<wire x1="12.7" y1="26.4" x2="12.43" y2="26.67" width="0.254" layer="1"/>
+<wire x1="12.43" y1="26.67" x2="10.795" y2="26.67" width="0.254" layer="1"/>
 </signal>
 <signal name="MISO">
 <contactref element="ISP1" pad="1"/>
 <contactref element="U1" pad="8"/>
 <contactref element="J2" pad="1"/>
-<wire x1="5.08" y1="21.59" x2="5.08" y2="20.955" width="0.254" layer="1"/>
-<wire x1="5.08" y1="20.955" x2="6.35" y2="22.225" width="0.254" layer="1"/>
-<wire x1="6.35" y1="22.225" x2="8.255" y2="22.225" width="0.254" layer="1"/>
-<wire x1="8.255" y1="22.225" x2="9.525" y2="20.955" width="0.254" layer="1"/>
-<wire x1="9.525" y1="20.955" x2="9.525" y2="3.175" width="0.254" layer="1"/>
-<wire x1="9.525" y1="3.175" x2="11.43" y2="1.27" width="0.254" layer="1"/>
 <wire x1="11.43" y1="1.27" x2="13.97" y2="1.27" width="0.254" layer="1"/>
+<wire x1="5.08" y1="21.59" x2="5.715" y2="20.955" width="0.254" layer="1"/>
+<wire x1="5.715" y1="20.955" x2="5.715" y2="6.985" width="0.254" layer="1"/>
+<wire x1="5.715" y1="6.985" x2="11.43" y2="1.27" width="0.254" layer="1"/>
 </signal>
 <signal name="SCK">
 <contactref element="ISP1" pad="3"/>
 <contactref element="U1" pad="9"/>
 <contactref element="J2" pad="2"/>
-<wire x1="10.16" y1="21.59" x2="10.16" y2="5.08" width="0.254" layer="1"/>
-<wire x1="10.16" y1="5.08" x2="11.43" y2="3.81" width="0.254" layer="1"/>
 <wire x1="13.97" y1="3.81" x2="11.43" y2="3.81" width="0.254" layer="1"/>
-<wire x1="10.16" y1="21.59" x2="7.62" y2="24.13" width="0.254" layer="1"/>
-<wire x1="7.62" y1="24.13" x2="5.08" y2="24.13" width="0.254" layer="1"/>
+<wire x1="5.08" y1="24.13" x2="6.35" y2="22.86" width="0.254" layer="1"/>
+<wire x1="6.35" y1="22.86" x2="6.35" y2="7.62" width="0.254" layer="1"/>
+<wire x1="11.43" y1="3.81" x2="10.16" y2="3.81" width="0.254" layer="1"/>
+<wire x1="10.16" y1="3.81" x2="6.35" y2="7.62" width="0.254" layer="1"/>
 </signal>
 <signal name="RST">
 <contactref element="ISP1" pad="5"/>
@@ -666,11 +683,15 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="6.35" y1="13.7" x2="5.985" y2="14.065" width="0.254" layer="16"/>
 <wire x1="5.985" y1="14.065" x2="5.985" y2="16.51" width="0.254" layer="16"/>
 <wire x1="5.985" y1="16.51" x2="3.81" y2="16.51" width="0.254" layer="16"/>
-<wire x1="5.985" y1="16.51" x2="5.985" y2="17.145" width="0.254" layer="16"/>
-<wire x1="5.985" y1="17.145" x2="7.89" y2="19.05" width="0.254" layer="16"/>
 <wire x1="2.54" y1="21.59" x2="2.54" y2="17.78" width="0.254" layer="1"/>
 <wire x1="2.54" y1="17.78" x2="3.81" y2="16.51" width="0.254" layer="1"/>
 <wire x1="3.81" y1="16.51" x2="1.27" y2="16.51" width="0.254" layer="1"/>
+<wire x1="5.985" y1="16.51" x2="5.985" y2="17.415" width="0.254" layer="16"/>
+<wire x1="5.985" y1="17.415" x2="6.35" y2="17.78" width="0.254" layer="16"/>
+<wire x1="6.35" y1="17.78" x2="8.255" y2="17.78" width="0.254" layer="16"/>
+<wire x1="8.255" y1="17.78" x2="8.89" y2="18.415" width="0.254" layer="16"/>
+<via x="8.89" y="18.415" extent="1-16" drill="0.5"/>
+<wire x1="8.89" y1="18.415" x2="8.89" y2="19.955" width="0.254" layer="1"/>
 </signal>
 <signal name="MOSI">
 <contactref element="ISP1" pad="4"/>
@@ -684,11 +705,9 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="2.54" y1="24.13" x2="1.27" y2="22.86" width="0.254" layer="16"/>
 </signal>
 <signal name="N$7">
-<contactref element="D1" pad="A"/>
+<contactref element="D1" pad="1"/>
 <contactref element="R1" pad="2"/>
-<wire x1="9.89" y1="20.05" x2="9.89" y2="19.05" width="0.254" layer="16"/>
-<wire x1="11.43" y1="22.86" x2="11.43" y2="20.59" width="0.254" layer="16"/>
-<wire x1="11.43" y1="20.59" x2="9.89" y2="19.05" width="0.254" layer="16"/>
+<wire x1="8.89" y1="24.4" x2="8.89" y2="21.955" width="0.254" layer="1"/>
 </signal>
 <signal name="N$2">
 <contactref element="U1" pad="2"/>
@@ -700,10 +719,16 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="J1" pad="3"/>
 <wire x1="3.81" y1="11.43" x2="1.27" y2="11.43" width="0.254" layer="1"/>
 </signal>
-<signal name="N$5">
+<signal name="LED">
 <contactref element="U1" pad="5"/>
 <contactref element="J1" pad="5"/>
 <wire x1="1.27" y1="6.35" x2="3.81" y2="6.35" width="0.254" layer="1"/>
+<contactref element="R3" pad="1"/>
+<wire x1="3.81" y1="6.35" x2="5.08" y2="6.35" width="0.254" layer="16"/>
+<wire x1="5.08" y1="6.35" x2="7.62" y2="8.89" width="0.254" layer="16"/>
+<via x="7.62" y="8.89" extent="1-16" drill="0.5"/>
+<wire x1="7.62" y1="8.89" x2="7.62" y2="14.875" width="0.254" layer="1"/>
+<wire x1="7.62" y1="14.875" x2="12.7" y2="19.955" width="0.254" layer="1"/>
 </signal>
 <signal name="N$6">
 <contactref element="U1" pad="6"/>
@@ -729,6 +754,11 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="U1" pad="13"/>
 <contactref element="J2" pad="6"/>
 <wire x1="13.97" y1="13.97" x2="11.43" y2="13.97" width="0.254" layer="1"/>
+</signal>
+<signal name="N$1">
+<contactref element="D2" pad="1"/>
+<contactref element="R3" pad="2"/>
+<wire x1="12.7" y1="24.4" x2="12.7" y2="21.955" width="0.254" layer="1"/>
 </signal>
 </signals>
 </board>
