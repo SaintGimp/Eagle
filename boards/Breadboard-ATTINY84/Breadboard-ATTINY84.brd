@@ -220,8 +220,8 @@
 <wire x1="1.973" y1="0.983" x2="1.973" y2="-0.983" width="0.0508" layer="39"/>
 <wire x1="1.973" y1="-0.983" x2="-1.973" y2="-0.983" width="0.0508" layer="39"/>
 <wire x1="-1.973" y1="-0.983" x2="-1.973" y2="0.983" width="0.0508" layer="39"/>
-<smd name="1" x="-1" y="0" dx="1.1" dy="1.4" layer="1"/>
-<smd name="2" x="1" y="0" dx="1.1" dy="1.4" layer="1"/>
+<smd name="1" x="-1.0469" y="0" dx="1.1938" dy="1.4" layer="1"/>
+<smd name="2" x="1.0469" y="0" dx="1.1938" dy="1.4" layer="1"/>
 <text x="-0.762" y="1.0795" size="0.8128" layer="25">&gt;NAME</text>
 <rectangle x1="0.4064" y1="-0.6985" x2="1.0564" y2="0.6985" layer="51"/>
 <rectangle x1="-1.0668" y1="-0.6985" x2="-0.4168" y2="0.6985" layer="51"/>
@@ -637,10 +637,10 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="U1" pad="14"/>
 <contactref element="J2" pad="7"/>
 <via x="10.795" y="26.67" extent="1-16" drill="0.5"/>
-<wire x1="8.89" y1="26.4" x2="9.16" y2="26.67" width="0.254" layer="1"/>
+<wire x1="8.89" y1="26.4469" x2="9.16" y2="26.67" width="0.254" layer="1"/>
 <wire x1="9.16" y1="26.67" x2="10.795" y2="26.67" width="0.254" layer="1"/>
 <contactref element="D2" pad="2"/>
-<wire x1="12.7" y1="26.4" x2="12.43" y2="26.67" width="0.254" layer="1"/>
+<wire x1="12.7" y1="26.4469" x2="12.43" y2="26.67" width="0.254" layer="1"/>
 <wire x1="12.43" y1="26.67" x2="10.795" y2="26.67" width="0.254" layer="1"/>
 </signal>
 <signal name="MISO">
@@ -710,7 +710,7 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$7">
 <contactref element="D1" pad="1"/>
 <contactref element="R1" pad="2"/>
-<wire x1="8.89" y1="24.4" x2="8.89" y2="21.955" width="0.254" layer="1"/>
+<wire x1="8.89" y1="24.3531" x2="8.89" y2="21.955" width="0.254" layer="1"/>
 </signal>
 <signal name="N$2">
 <contactref element="U1" pad="2"/>
@@ -761,7 +761,7 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$1">
 <contactref element="D2" pad="1"/>
 <contactref element="R3" pad="2"/>
-<wire x1="12.7" y1="24.4" x2="12.7" y2="21.955" width="0.254" layer="1"/>
+<wire x1="12.7" y1="24.3531" x2="12.7" y2="21.955" width="0.254" layer="1"/>
 </signal>
 </signals>
 </board>
